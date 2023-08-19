@@ -1,6 +1,6 @@
 # 几乎刷完了力扣所有的链表题，我发现了这些东西。。。
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gki5nbjcgqj31be0u0q5w.jpg)
+![](https://p.ipic.vip/msbze4.jpg)
 
 先上下本文的提纲，这个是我用 mindmap 画的一个脑图，之后我后继续完善，将其他专题逐步完善起来。
 
@@ -10,7 +10,7 @@
 
 [链表标签](https://leetcode-cn.com/tag/linked-list/ "链表标签")在 leetcode 一共有 **54 道题**。 为了准备这个专题，我花了几天时间将 leetcode 几乎所有的链表题目都刷了一遍。
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gki5vhm12jj310y0raadh.jpg)
+![](https://p.ipic.vip/zbtxl9.jpg)
 
 可以看出，除了六个上锁的，其他我都刷了一遍。而实际上，这六个上锁的也没有什么难度，甚至和其他 48 道题差不多。
 
@@ -22,13 +22,13 @@
 
 各种数据结构，不管是队列，栈等线性数据结构还是树，图的等非线性数据结构，从根本上底层都是数组和链表。不管你用的是数组还是链表，用的都是计算机内存，物理内存是一个个大小相同的内存单元构成的，如图：
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfqt71jt4cj30kg0b4wfl.jpg)
+![](https://p.ipic.vip/xhq1to.jpg)
 
 （图 1. 物理内存）
 
 而数组和链表虽然用的都是物理内存，都是两者在对物理的使用上是非常不一样的，如图：
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfqtbpbwmrj31gu0qmtej.jpg)
+![](https://p.ipic.vip/1ka0f8.jpg)
 
 （图 2. 数组和链表的物理存储图）
 
@@ -49,7 +49,7 @@ data 是数据域，存放数据，next 是一个指向下一个节点的指针�
 
 从上面的物理结构图可以看出数组是一块连续的空间，数组的每一项都是紧密相连的，因此如果要执行插入和删除操作就很麻烦。对数组头部的插入和删除时间复杂度都是$O(N)$，而平均复杂度也是$O(N)$，只有对尾部的插入和删除才是$O(1)$。简单来说”数组对查询特别友好，对删除和添加不友好“。为了解决这个问题，就有了链表这种数据结构。链表适合在数据需要有一定顺序，但是又需要进行频繁增删除的场景，具体内容参考后面的《链表的基本操作》小节。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfigmeqc3xj316o094jt6.jpg)
+![](https://p.ipic.vip/u30pfe.jpg)
 
 （图 3. 一个典型的链表逻辑表示图）
 
@@ -220,7 +220,7 @@ arr[arr.length - 1] = 'lucifer'
 
 链表题真的不难。说链表不难是有证据的。就拿 LeetCode 平台来说，处于困难难度的题目只有两个。
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkhptfjewrj310c0fajt1.jpg)
+![](https://p.ipic.vip/3swdk5.jpg)
 
 其中 第 23 题基本没有什么链表操作，一个常规的“归并排序”即可搞定，而合并两个有序链表是一个简单题。如果你懂得数组的归并排序和合并两个有序链表，应该轻松拿下这道题。
 
@@ -280,11 +280,11 @@ reverse(self, head: ListNode, tail: ListNode)。
 
 如下图，是我们需要反转的部分链表：
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkhy98pp5fj31d40am3zx.jpg)
+![](https://p.ipic.vip/nc83zm.jpg)
 
 而我们期望反转之后的长这个样子：
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkhs3rsde4j31cc09o75p.jpg)
+![](https://p.ipic.vip/lxotqm.jpg)
 
 不难看出， **最终返回 tail 即可**。
 
@@ -292,7 +292,7 @@ reverse(self, head: ListNode, tail: ListNode)。
 
 > 链表是一种递归的数据结构，因此采用递归的思想去考虑往往事半功倍，关于递归思考链表将在后面《三个注意》部分展开。
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkhs8pccboj30ku09u0td.jpg)
+![](https://p.ipic.vip/4hip0a.jpg)
 
 对于两个节点来说，我们只需要下修改一次指针即可，这好像不难。
 
@@ -300,7 +300,7 @@ reverse(self, head: ListNode, tail: ListNode)。
 cur.next = pre
 ```
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkhsaoodvrj30yu0h8761.jpg)
+![](https://p.ipic.vip/4q5r2c.jpg)
 
 就是这一个操作，不仅硬生生有了环，让你死循环。还让不应该一刀两断的它们分道扬镳。
 
@@ -313,11 +313,11 @@ cur.next = pre
 cur = next
 ```
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkhsft0cyuj30wa0s80ux.jpg)
+![](https://p.ipic.vip/on3e98.jpg)
 
 那么环呢？ 实际上， 环不用解决。因为如果我们是从前往后遍历，那么实际上，前面的链表已经被反转了，因此上面我的图是错的。正确的图应该是：
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkhsi5tiorj311y0gcwg1.jpg)
+![](https://p.ipic.vip/yezxnp.jpg)
 
 至此为止，我们可以写出如下代码：
 
@@ -462,7 +462,7 @@ def dfs(head):
 1. 前面的已经处理好了
 2. 后面的还没处理好
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkhvdo54mpj31ly0ikjvp.jpg)
+![](https://p.ipic.vip/87uwuu.jpg)
 
 据此，我们不难写出以下递归代码，代码注释很详细，大家看注释就好了。
 
@@ -480,7 +480,7 @@ dfs(head, None)
 
 如果是后序遍历呢？老规矩，秉承我们的一个原则，**先画图**。
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkhvf05u10j31n20ikdk6.jpg)
+![](https://p.ipic.vip/i9i8d5.jpg)
 
 不难看出，我们可以通过 head.next 拿到下一个元素，然后将下一个元素的 next 指向自身来完成反转。
 
@@ -490,13 +490,13 @@ dfs(head, None)
 head.next.next = head
 ```
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkhvhje71pj31ji0k2gq0.jpg)
+![](https://p.ipic.vip/ybnksi.jpg)
 
 画出图之后，是不是很容易看出图中有一个环？ 现在知道画图的好处了吧？就是这么直观，当你很熟练了，就不需要画了，但是在此之前，请不要偷懒。
 
 因此我们需要将 head.next 改为不会造成环的一个值，比如置空。
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkhvj9pa2oj31j40k0n1h.jpg)
+![](https://p.ipic.vip/yto283.jpg)
 
 ```py
 def dfs(head):
@@ -513,7 +513,7 @@ def dfs(head):
 
 值得注意的是，**前序遍历很容易改造成迭代，因此推荐大家使用前序遍历**。我拿上面的迭代和这里的前序遍历给大家对比一下。
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkhur25rl6j317i0iiq7b.jpg)
+![](https://p.ipic.vip/6xhd8g.jpg)
 
 那么为什么**前序遍历很容易改造成迭代**呢？实际上，这句话我说的不准确，准确地说应该是**前序遍历容易改成不需要栈的递归，而后续遍历需要借助栈来完成**。这也不难理解，由于后续遍历的主逻辑在函数调用栈的弹出过程，而前序遍历则不需要。
 
@@ -569,13 +569,13 @@ A3: ListNode(3)
 
 **ans.next 指向什么取决于最后切断 ans.next 指向的地方在哪**。比如 Q1，ans.next 指向的是 head，我们假设其指向的内存编号为 `9527`。
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkhw2lifs8j30rs0d275t.jpg)
+![](https://p.ipic.vip/mplvs9.jpg)
 
 之后执行 `head = head.next` （ans 和 head 被切断联系了），此时的内存图：
 
 > 我们假设头节点的 next 指针指向的节点的内存地址为 10200
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkhw3pzl7xj30wa0nmwh7.jpg)
+![](https://p.ipic.vip/l5uhz9.jpg)
 
 不难看出，ans 没变。
 
@@ -588,7 +588,7 @@ head.next = ListNode(4)
 
 ans 和 head 又同时指向 ListNode(3) 了。如图：
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkhwb3y2yfj30tc0g4aca.jpg)
+![](https://p.ipic.vip/m2veru.jpg)
 
 `head.next = ListNode(4)` 也是同理。因此最终的指向 ans.next 是 ListNode(4)。
 
@@ -607,7 +607,7 @@ head = ListNode(2)
 head.next = ListNode(4)
 ```
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkhwgh3gkfj311q0qadj0.jpg)
+![](https://p.ipic.vip/kb4hkr.jpg)
 
 指向了 `head = ListNode(2)` 之后， head 和 ans 的关系就被切断了，**当前以及之后所有的 head 操作都不会影响到 ans**，因此 ans 还指向被切断前的节点，因此 ans.next 输出的是 ListNode(3)。
 
@@ -642,17 +642,17 @@ head.next = ListNode(4)
 
 还是以反转链表为例，只不过这次是`反转链表的中间一部分`，那我们该怎么做？
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkhx2qi4r3j31y80jsq5s.jpg)
+![](https://p.ipic.vip/pidaw4.jpg)
 
 反转前面我们已经讲过了，于是我假设链表已经反转好了，那么如何将反转好的链表拼后去呢？
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkhx496ge5j31w60gywh1.jpg)
+![](https://p.ipic.vip/guk4mw.jpg)
 
 我们想要的效果是这样的：
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkhx5vpcg2j31lg0u0afd.jpg)
+![](https://p.ipic.vip/pw5mw6.jpg)
 
-那怎么达到图上的效果呢？我的做法是从做到右给断点编号。如图有两个断点，共涉及到四个节点。于是我给它们依次编号为 a，b，c，d。
+那怎么达到图上的效果呢？我的做法是从左到右给断点编号。如图有两个断点，共涉及到四个节点。于是我给它们依次编号为 a，b，c，d。
 
 其实 a，d 分别是需要反转的链表部分的前驱和后继（不参与反转），而 b 和 c 是需要反转的部分的头和尾（参与反转）。
 
@@ -665,7 +665,7 @@ a.next = c
 b.next = d
 ```
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkhyqypiltj31b40oy77h.jpg)
+![](https://p.ipic.vip/8e2key.jpg)
 
 这不就好了么？我记得的就有 25 题，61 题 和 92 题都是这么做的，清晰不混乱。
 
@@ -803,6 +803,6 @@ while cur:
 
 我整理的 1000 多页的电子书已经开发下载了，大家可以去我的公众号《力扣加加》后台回复电子书获取。
 
-![](https://cdn.jsdelivr.net/gh/azl397985856/cdn/2020-10-17/1602928846461-image.png)
+![](https://p.ipic.vip/qjoumi.png)
 
-![](https://cdn.jsdelivr.net/gh/azl397985856/cdn/2020-10-17/1602928862442-image.png)
+![](https://p.ipic.vip/b02qzv.png)

@@ -1,6 +1,6 @@
 # 几乎刷完了力扣所有的树题，我发现了这些东西。。。
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkybjfbpubj30uo0u0gqz.jpg)
+![](https://p.ipic.vip/6lmcjx.jpg)
 
 先上下本文的提纲，这个是我用 mindmap 画的一个脑图，之后我会继续完善，将其他专题逐步完善起来。
 
@@ -15,17 +15,17 @@
 
 首先亮一下本文的主角 - 树（我的化妆技术还行吧^\_^）：
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkyz162e1ij30lu0ssdhm.jpg)
+![](https://p.ipic.vip/pe39ec.jpg)
 
 [树标签](https://leetcode-cn.com/tag/tree/ "树标签")在 leetcode 一共有 **175 道题**。 为了准备这个专题，我花了几天时间将 leetcode 几乎所有的树题目都刷了一遍。
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkpkbu92m2j30u00vg0xu.jpg)
+![](https://p.ipic.vip/rsenck.jpg)
 
 除了 35 个上锁的，1 个不能做的题（1628 题不知道为啥做不了）， 4 个标着树的标签但却是图的题目，其他我都刷了一遍。通过集中刷这些题，我发现了一些有趣的信息，今天就分享给大家。
 
 ## 食用指南
 
-大家好，我是 lucifer。今天给大家带来的是《树》专题。另外为了保持章节的聚焦性和实用性，省去了一些内容，比如哈夫曼树，前缀树，平衡二叉树（红黑树等），二叉堆。这些内容相对来说实用性没有那么强，如果大家对这些内容也感兴趣，可以关注下我的仓库 [leetcode 算法题解](https://github.com/azl397985856/leetcode "leetcode 算法题解")，大家有想看的内容也可以留言告诉我哦~
+大家好，我是 lucifer。今天给大家带来的是《[树](https://www.scaler.com/topics/data-structures/tree-data-structure/)》专题。另外为了保持章节的聚焦性和实用性，省去了一些内容，比如哈夫曼树，前缀树，平衡二叉树（红黑树等），二叉堆。这些内容相对来说实用性没有那么强，如果大家对这些内容也感兴趣，可以关注下我的仓库 [leetcode 算法题解](https://github.com/azl397985856/leetcode "leetcode 算法题解")，大家有想看的内容也可以留言告诉我哦~
 
 另外要提前告知大家的是本文所讲的很多内容都很依赖于递归。关于递归的练习我推荐大家把递归过程画到纸上，手动代入几次。等大脑熟悉了递归之后就不用这么辛苦了。 实在懒得画图的同学也可以找一个可视化递归的网站，比如 https://recursion.now.sh/。 等你对递归有了一定的理解之后就仔细研究一下树的各种遍历方法，再把本文看完，最后把文章末尾的题目做一做，搞定个递归问题不大。
 
@@ -37,11 +37,11 @@
 
 提到树大家更熟悉的是现实中的树，而现实中的树是这样的：
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkydk0w4uoj31750u0amg.jpg)
+![](https://p.ipic.vip/b170o8.jpg)
 
 而计算机中的树其实是现实中的树的倒影。
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkydoh5we8j31bl0u0kjn.jpg)
+![](https://p.ipic.vip/dkkqya.jpg)
 
 计算机的数据结构是对现实世界物体间关系的一种抽象。比如家族的族谱，公司架构中的人员组织关系，电脑中的文件夹结构，html 渲染的 dom 结构等等，这些有层次关系的结构在计算机领域都叫做树。
 
@@ -63,13 +63,13 @@ function fn(n) {
 
 继续回到上面的代码，根据上面的代码可以画出如下的递归树。
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkqv37r0x4j30f90iot9s.jpg)
+![](https://p.ipic.vip/bcwh8q.jpg)
 
 其中树的边表示的是返回值，树节点表示的是需要计算的值，即 fn(n）。
 
 以计算 5 的 fibbonacci 为例，过程大概是这样的（动图演示）：
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkqvazbxs8g30gi0my4qp.gif)
+![](https://p.ipic.vip/tq20mp.gif)
 
 **这其实就是一个树的后序遍历**，你说树（逻辑上的树）是不是很重要？关于后序遍历咱们后面再讲，现在大家知道是这么回事就行。
 
@@ -87,7 +87,7 @@ function fn(n) {
 
 树是一种非线性数据结构。树结构的基本单位是节点。节点之间的链接，称为分支（branch）。节点与分支形成树状，结构的开端，称为根（root），或根结点。根节点之外的节点，称为子节点（child）。没有链接到其他子节点的节点，称为叶节点（leaf）。如下图是一个典型的树结构：
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfjv3xmkknj30jb0cymxw.jpg)
+![](https://p.ipic.vip/zxziz6.jpg)
 
 每个节点可以用以下数据结构来表示：
 
@@ -209,8 +209,10 @@ class Solution:
 
 如要**实现前序、后序遍历，也只需要调整左右子节点的入栈顺序即可，其他部分是无需做任何变化**。
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkq01o7423j31gg0u0dwg.jpg)
+![](https://p.ipic.vip/jgzo24.jpg)
 （前中后序遍历只需要调整这三句话的位置即可）
+
+> 注：这张示意图的前序和后序画反了
 
 可以看出使用三色标记法，其写法类似递归的形式，因此便于记忆和书写。
 
@@ -238,7 +240,7 @@ class Solution:
 
 层次遍历就是一层层遍历树，按照树的层次顺序进行访问。
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkye7nyrjaj30yw0ec762.jpg)
+![](https://p.ipic.vip/d93wqd.jpg)
 （层次遍历图示）
 
 **BFS 的核心在于求最短问题时候可以提前终止，这才是它的核心价值，层次遍历是一种不需要提前终止的 BFS 的副产物**。这个提前终止不同于 DFS 的剪枝的提前终止，而是找到最近目标的提前终止。比如我要找距离最近的目标节点，BFS 找到目标节点就可以直接返回。而 DFS 要穷举所有可能才能找到最近的，这才是 BFS 的核心价值。实际上，我们也可以使用 DFS 实现层次遍历的效果，借助于递归，代码甚至会更简单。
@@ -257,14 +259,14 @@ class Solution:
 
 DFS 图解：
 
-![binary-tree-traversal-dfs](https://tva1.sinaimg.cn/large/007S8ZIlly1ghlui7vcmwg30dw0dw3yl.gif)
+![binary-tree-traversal-dfs](https://p.ipic.vip/9l3es0.gif)
 
 (图片来自 https://github.com/trekhleb/javascript-algorithms/tree/master/src/algorithms/tree/depth-first-search)
 
 #### 算法流程
 
 1. 首先将根节点放入**stack**中。
-2. 从*stack*中取出第一个节点，并检验它是否为目标。如果找到所有的节点，则结束搜寻并回传结果。否则将它某一个尚未检验过的直接子节点加入**stack**中。
+2. 从*stack*中取出第一个节点，并检验它是否为目标。如果找到目标，则结束搜寻并回传结果。否则将它某一个尚未检验过的直接子节点加入**stack**中。
 3. 重复步骤 2。
 4. 如果不存在未检测过的直接子节点。将上一级节点加入**stack**中。
    重复步骤 2。
@@ -344,7 +346,7 @@ function dfs(root) {
 
 那么此时我们称为前序遍历。
 
-##### 后续遍历
+##### 后序遍历
 
 而如果你的代码大概是这么写的（注意主要逻辑的位置）：
 
@@ -375,7 +377,7 @@ function dfs(root) {
 }
 ```
 
-如上代码，我们在进入和退出左右子树的时候分别执行了一些代码。那么这个时候，是前序遍历还是后续遍历呢？实际上，这属于混合遍历了。不过我们这里只考虑**主逻辑**的位置，关键词是**主逻辑**。
+如上代码，我们在进入和退出左右子树的时候分别执行了一些代码。那么这个时候，是前序遍历还是后序遍历呢？实际上，这属于混合遍历了。不过我们这里只考虑**主逻辑**的位置，关键词是**主逻辑**。
 
 如果代码主逻辑在左右子树之前执行，那么就是前序遍历。如果代码主逻辑在左右子树之后执行，那么就是后序遍历。关于更详细的内容， 我会在**七个技巧** 中的**前后遍历**部分讲解，大家先留个印象，知道有着两种方式就好。
 
@@ -393,7 +395,7 @@ function dfs(root) {
     4   5
 ```
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkyyxm3hamj31990u0dtc.jpg)
+![](https://p.ipic.vip/tmo5xd.jpg)
 
 图画的还算比较清楚， 就不多解释了。大家遇到题目多画几次这样的递归图，慢慢就对递归有感觉了。
 
@@ -407,7 +409,7 @@ BFS 比较适合找**最短距离/路径**和**某一个距离的目标**。比�
 
 BFS 图解：
 
-![binary-tree-traversal-bfs](https://tva1.sinaimg.cn/large/007S8ZIlly1ghluic79lag30dw0dw3yl.gif)
+![binary-tree-traversal-bfs](https://p.ipic.vip/ngpvx8.gif)
 
 (图片来自 https://github.com/trekhleb/javascript-algorithms/tree/master/src/algorithms/tree/breadth-first-search)
 
@@ -509,7 +511,7 @@ class Solution:
 
 树的遍历是后面所有内容的基础，而树的遍历的两种方式 DFS 和 BFS 到这里就简单告一段落，现在大家只要知道 DFS 和 BFS 分别有两种常见的方式就够了，后面我会给大家详细补充。
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkpw8vgshuj30ce0kqwgt.jpg)
+![](https://p.ipic.vip/ns8q58.jpg)
 
 ## 三种题型
 
@@ -578,7 +580,7 @@ class Solution:
             # 叶子节点
             if cur and not cur.left and not cur.right:
                 if remain == cur.val:
-                    res.append((path + [cur.val]).copy())
+                    nodes.append((path + [cur.val]).copy())
                 return
             # 选择
             path.append(cur.val)
@@ -611,7 +613,7 @@ class Solution:
 比如：
 ```
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkpxakvvlwj30650anjrj.jpg)
+![](https://p.ipic.vip/g9kzbm.jpg)
 
 ```
 此时需要返回 3
@@ -674,7 +676,7 @@ class Solution:
 
 最经典的就是 [剑指 Offer 37. 序列化二叉树](https://leetcode-cn.com/problems/xu-lie-hua-er-cha-shu-lcof/)。我们知道力扣的所有的树表示都是使用数字来表示的，而这个数组就是一棵树的层次遍历结果，部分叶子节点的子节点（空节点）也会被打印。比如：[1,2,3,null,null,4,5]，就表示的是如下的一颗二叉树：
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkpyzzz9jrj30a20a8dge.jpg)
+![](https://p.ipic.vip/h0vpxq.jpg)
 
 我们是如何根据这样的一个层次遍历结果构造出原始二叉树的呢？这其实就属于构造二叉树的内容，这个类型目前力扣就这一道题。这道题如果你彻底理解 BFS，那么就难不倒你。
 
@@ -700,7 +702,7 @@ class Solution:
 
 修改指针的题目一般不难，比如 [116. 填充每个节点的下一个右侧节点指针](https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node/)，这不就是 BFS 的时候顺便记录一下上一次访问的同层节点，然后增加一个指针不就行了么？关于 BFS ，套用我的**带层的 BFS 模板**就搞定了。
 
-增加和删除的题目一般稍微复杂，比如 [450. 删除二叉搜索树中的节点](https://leetcode-cn.com/problems/delete-node-in-a-bst/) 和 [669. 修剪二叉搜索树](https://leetcode-cn.com/problems/trim-a-binary-search-tree/)。西法我教你两个套路，面对这种问题就不带怕的。那就是**后续遍历 + 虚拟节点**，这两个技巧同样放在后面的七个技巧部分讲解。是不是对七个技巧很期待？^\_^
+增加和删除的题目一般稍微复杂，比如 [450. 删除二叉搜索树中的节点](https://leetcode-cn.com/problems/delete-node-in-a-bst/) 和 [669. 修剪二叉搜索树](https://leetcode-cn.com/problems/trim-a-binary-search-tree/)。西法我教你两个套路，面对这种问题就不带怕的。那就是**后序遍历 + 虚拟节点**，这两个技巧同样放在后面的七个技巧部分讲解。是不是对七个技巧很期待？^\_^
 
 > 实际工程中，我们也可以不删除节点，而是给节点做一个标记，表示已经被删除了，这叫做软删除。
 
@@ -729,7 +731,7 @@ class Solution {
 
 简单回顾一下这一小节的知识。
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkq1lml9dej30fw0fw40e.jpg)
+![](https://p.ipic.vip/qam2jk.jpg)
 
 接下来是做树的题目不得不知的四个重要概念。
 
@@ -754,7 +756,7 @@ class Solution {
 
 举个例子，如下一颗二叉查找树，我们想找节点值小于且最接近 58 的节点，搜索的流程如图所示：
 
-![bst](https://tva1.sinaimg.cn/large/007S8ZIlly1ghluh33ttoj30rs0mudhi.jpg)
+![bst](https://p.ipic.vip/gk03po.jpg)
 （图片来自 https://www.geeksforgeeks.org/floor-in-binary-search-tree-bst/）
 
 可以看出每次向下走，都会排除了一个分支，如果一颗二叉搜索树同时也是一颗二叉平衡树的话，那么其搜索过程时间复杂度就是 $O(logN)$。实际上，**平衡二叉搜索树的查找和有序数组的二分查找本质都是一样的，只是数据的存储方式不同罢了**。那为什么有了有序数组二分，还需要二叉搜索树呢？原因在于树的结构对于动态数据比较友好，比如数据是频繁变动的，比如经常添加和删除，那么就可以使用二叉搜索树。理论上添加和删除的时间复杂度都是 $O(h)$，其中 h 为树的高度，如果是一颗平衡二叉搜索树，那么时间复杂度就是 $O(logN)$。而数组的添加和删除的时间复杂度为 $O(N)$，其中 N 为数组长度。
@@ -769,7 +771,14 @@ class Solution {
 
 再比如 [99. 恢复二叉搜索树](https://leetcode-cn.com/problems/recover-binary-search-tree/)，官方难度为困难。题目大意是`给你二叉搜索树的根节点 root ，该树中的两个节点被错误地交换。请在不改变其结构的情况下，恢复这棵树。` 我们可以先中序遍历发现不是递增的节点，他们就是被错误交换的节点，然后交换恢复即可。这道题难点就在于一点，即错误交换可能错误交换了中序遍历的相邻节点或者中序遍历的非相邻节点，这是两种 case，需要分别讨论。
 
-类似的题目很多，不再赘述。大家如果**碰到二叉搜索树的搜索类题目，一定先想下能不能利用这个性质来做。**
+类似的题目很多，不再赘述。练习的话大家可以做一下这几道题。
+
+- [94. 二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/)
+- [98. 验证二叉搜索树](https://leetcode-cn.com/problems/validate-binary-search-tree/)
+- [173. 二叉搜索树迭代器](https://leetcode-cn.com/problems/binary-search-tree-iterator/)
+- [250. 统计同值子树](https://leetcode-cn.com/problems/count-univalue-subtrees/)
+
+大家如果**碰到二叉搜索树的搜索类题目，一定先想下能不能利用这个性质来做。**
 
 ### 完全二叉树
 
@@ -777,15 +786,15 @@ class Solution {
 
 如下就是一颗完全二叉树：
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkqbvfgqj7j307g042wei.jpg)
+![](https://p.ipic.vip/6gxl9n.jpg)
 
 直接考察完全二叉树的题目虽然不多，貌似只有一道 [222. 完全二叉树的节点个数](https://leetcode-cn.com/problems/count-complete-tree-nodes/)（二分可解），但是理解完全二叉树对你做题其实帮助很大。
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkq92qmj8yj313g0p0mz4.jpg)
+![](https://p.ipic.vip/giot6z.jpg)
 
 如上图，是一颗普通的二叉树。如果我将其中的空节点补充完全，那么它就是一颗完全二叉树了。
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkq93usnp2j316m0p40vh.jpg)
+![](https://p.ipic.vip/w7hk68.jpg)
 
 这有什么用呢？这很有用！我总结了两个用处：
 
@@ -890,18 +899,18 @@ class Codec:
 
 细心的同学可能会发现，我上面的代码其实并不是将树序列化成了完全二叉树，这个我们稍后就会讲到。另外后面多余的空节点也一并序列化了。这其实是可以优化的，优化的方式也很简单，那就是去除末尾的 null 即可。
 
-你只要彻底理解我刚才讲的`我们可以给完全二叉树编号，这样父子之间就可以通过编号轻松求出。比如我给所有节点从左到右从上到下依次从 1 开始编号。那么已知一个节点的编号是 i，那么其左子节点就是 2 * i，右子节点就是 2 * i + 1，父节点就是 (i + 1) / 2。` 这句话，那么反序列化对你就不是难事。
+你只要彻底理解我刚才讲的`我们可以给完全二叉树编号，这样父子之间就可以通过编号轻松求出。比如我给所有节点从左到右从上到下依次从 1 开始编号。那么已知一个节点的编号是 i，那么其左子节点就是 2 * i，右子节点就是 2 * i + 1，父节点就是 i / 2。` 这句话，那么反序列化对你就不是难事。
 
 如果我用一个箭头表示节点的父子关系，箭头指向节点的两个子节点，那么大概是这样的：
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkqb8mcsv7j31z60sggrm.jpg)
+![](https://p.ipic.vip/nvzvze.jpg)
 
 我们刚才提到了：
 
 - 1 号节点的两个子节点的 2 号 和 3 号。
 - 2 号节点的两个子节点的 4 号 和 5 号。
 - 。。。
-- i 号节点的两个子节点的 `2 * i` 号 和 `2 * 1 + 1` 号。
+- i 号节点的两个子节点的 `2 * i` 号 和 `2 * i + 1` 号。
 
 此时你可能会写出类似这样的代码：
 
@@ -933,13 +942,13 @@ class Codec:
 
 但是上面的代码是不对的，因为我们序列化的时候其实不是完全二叉树，这也是上面我埋下的伏笔。因此遇到类似这样的 case 就会挂：
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkqcfujvv4j315s0u078j.jpg)
+![](https://p.ipic.vip/xdhqsd.jpg)
 
 这也是我前面说”上面代码的序列化并不是一颗完全二叉树“的原因。
 
 其实这个很好解决， 核心还是上面我画的那种图：
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkqb8mcsv7j31z60sggrm.jpg)
+![](https://p.ipic.vip/nvzvze.jpg)
 
 其实我们可以：
 
@@ -986,11 +995,11 @@ def deserialize(self, data):
 
 首先是官网给的两个例子：
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkqsytwibqj30kh07pgm8.jpg)
+![](https://p.ipic.vip/dto1q5.jpg)
 
 接着是我自己画的一个例子：
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkqsz5bhtqj30hu0cd3zk.jpg)
+![](https://p.ipic.vip/7ihqmk.jpg)
 
 如图红色的部分是最大路径上的节点。
 
@@ -1065,11 +1074,11 @@ def dfs(node):
 
 第二个原因是：这样写相当于把 root 当成是 current 指针来用了。最开始 current 指针指向 root，然后不断修改指向树的其它节点。这样就概念就简化了，只有一个当前指针的概念。如果使用 node，就是当前指针 + root 指针两个概念了。
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkurtwpr6lj30bl0aowey.jpg)
+![](https://p.ipic.vip/qesbgr.jpg)
 
 （一开始 current 就是 root）
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkurvb2pwbj30ap0b8aaj.jpg)
+![](https://p.ipic.vip/skhbmx.jpg)
 
 （后面 current 不断改变。具体如何改变，取决于你的搜索算法，是 dfs 还是 bfs 等）
 
@@ -1160,7 +1169,7 @@ def dfs_main(root):
 右图为返回的答案。
 ```
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkuovucp7nj30z809v74w.jpg)
+![](https://p.ipic.vip/skicf9.jpg)
 
 ```
 
@@ -1170,7 +1179,7 @@ def dfs_main(root):
 输出: [1,null,1,null,1]
 ```
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkuovzkq1bj316t09v3ze.jpg)
+![](https://p.ipic.vip/otw4cl.jpg)
 
 ```
 示例3:
@@ -1178,7 +1187,7 @@ def dfs_main(root):
 输出: [1,1,0,1,1,null,1]
 ```
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkuowgc9oaj319w0ccjsm.jpg)
+![](https://p.ipic.vip/mgbg5z.jpg)
 
 ```
 说明:
@@ -1253,7 +1262,7 @@ var pruneTree = function (root) {
 示例 1：
 ```
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkup76wi89j30s706b0t7.jpg)
+![](https://p.ipic.vip/ct6qbq.jpg)
 
 ```
 
@@ -1266,7 +1275,7 @@ var pruneTree = function (root) {
 示例 2：
 ```
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkup80cyszj30gc06bmxd.jpg)
+![](https://p.ipic.vip/6c2ahn.jpg)
 
 ```
 
@@ -1276,7 +1285,7 @@ var pruneTree = function (root) {
 示例 3：
 ```
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkup89sd5vj30k406o3yr.jpg)
+![](https://p.ipic.vip/9p1dgx.jpg)
 
 ```
 
@@ -1376,7 +1385,7 @@ def dfs(root):
 
 一张图总结一下：
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkye36obl1j310k0pe0wg.jpg)
+![](https://p.ipic.vip/vr7kd9.jpg)
 
 经过这样的处理，后面的代码基本都不需要判空了。
 
@@ -1575,7 +1584,7 @@ dfs 返回数组比较少见。即使题目要求返回数组，我们也通常�
 示例 1：
 ```
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkuq5u4zclj308x08xq33.jpg)
+![](https://p.ipic.vip/pjheed.jpg)
 
 ```
  
@@ -1588,7 +1597,7 @@ dfs 返回数组比较少见。即使题目要求返回数组，我们也通常�
 示例 2：
 ```
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkuq63va2gj30c908xjrr.jpg)
+![](https://p.ipic.vip/ds1khy.jpg)
 
 ```
 
@@ -1685,6 +1694,6 @@ class Solution:
 
 我整理的 1000 多页的电子书已经开发下载了，大家可以去我的公众号《力扣加加》后台回复电子书获取。
 
-![](https://cdn.jsdelivr.net/gh/azl397985856/cdn/2020-10-17/1602928846461-image.png)
+![](https://p.ipic.vip/y4jc3t.png)
 
-![](https://cdn.jsdelivr.net/gh/azl397985856/cdn/2020-10-17/1602928862442-image.png)
+![](https://p.ipic.vip/sco829.png)

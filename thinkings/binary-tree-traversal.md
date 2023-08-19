@@ -14,7 +14,7 @@ DFS 都可以使用栈来简化操作，并且其实树本身是一种递归的�
 
 DFS 图解：
 
-![binary-tree-traversal-dfs](https://tva1.sinaimg.cn/large/007S8ZIlly1ghlui7vcmwg30dw0dw3yl.gif)
+![binary-tree-traversal-dfs](https://p.ipic.vip/phae05.gif)
 
 (图片来自 https://github.com/trekhleb/javascript-algorithms/tree/master/src/algorithms/tree/depth-first-search)
 
@@ -44,7 +44,7 @@ BFS 的关键点在于如何记录每一层次是否遍历完成， 我们可以
 
 整个过程大概是这样：
 
-![binary-tree-traversal-preorder](https://tva1.sinaimg.cn/large/007S8ZIlly1ghlui8rph4j30n30azaar.jpg)
+![binary-tree-traversal-preorder](https://p.ipic.vip/ei0wj1.jpg)
 
 这种思路有一个好处就是可以`统一三种遍历的思路`. 这个很重要，如果不了解的朋友，希望能够记住这一点。
 
@@ -90,7 +90,7 @@ BFS 的关键点在于如何记录每一层次是否遍历完成， 我们可以
 
 层次遍历的关键点在于如何记录每一层次是否遍历完成， 我们可以用一个标识位来表式当前层的结束。
 
-![binary-tree-traversal-bfs](https://tva1.sinaimg.cn/large/007S8ZIlly1ghluic79lag30dw0dw3yl.gif)
+![binary-tree-traversal-bfs](https://p.ipic.vip/9z2nxw.gif)
 
 (图片来自 https://github.com/trekhleb/javascript-algorithms/tree/master/src/algorithms/tree/breadth-first-search)
 
@@ -157,6 +157,10 @@ class Solution:
 
 我们可以使用一种叫做 Morris 遍历的方法，既不使用递归也不借助于栈。从而在 $O(1)$ 空间完成这个过程。
 
+**如果你需要使用 $O(1)$ 空间遍历一棵二叉树，那么就要使用 Morris 遍历。**
+
+这个算法考察相对少，作为了解即可。
+
 ```python
 def MorrisTraversal(root):
     curr = root
@@ -197,7 +201,21 @@ def MorrisTraversal(root):
 
 参考： [what-is-morris-traversal](https://www.educative.io/edpresso/what-is-morris-traversal)
 
-**划重点：Morris 是一种可以在 $O(1)$ 空间遍历二叉树的算法。\***
+**划重点：Morris 是一种可以在 $O(1)$ 空间遍历二叉树的算法。**
+
+## 总结
+
+本文详细讲解了二叉树的层次遍历和深度优先遍历。
+
+对于深度优先遍历，我们又细分为前中后序三种遍历方式。
+
+最后我们讲解了双色遍历和 Morris 遍历。这两种方式可以作为了解，不掌握也没关系。
+
+另外，如果题目要求你实现迭代器（就是调用一次输出一个二叉树的值），那么前面讲的迭代的方式就非常适用了。比如这道题 [Binary Search Tree Iterator](https://binarysearch.com/problems/Binary-Search-Tree-Iterator)
+
+## 相关专题
+
+- [几乎刷完了力扣所有的树题，我发现了这些东西。。。](https://lucifer.ren/blog/2020/11/23/tree/)
 
 ## 相关题目
 
